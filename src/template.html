@@ -5,5 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
-  <body></body>
+  <body>
+    <div id="general-weather-container">
+      <div class="left-weather-info">
+        <div class="location-info">
+          <div class="location-area">
+            <h1 class="location-region">NAIROBI</h1>
+            <h3 class="location-area">Nairobi Area</h3>
+            <h3 class="location-country">Kenya</h3>
+          </div>
+          <div class="location-time">
+            <p class="location-time">october 7 11:12</p>
+          </div>
+        </div>
+        <div class="temperature-info">
+          <div class="temp-c">19.0</div>
+          <div class="temp-f">66.2</div>
+        </div>
+        <div class="location-weather-data">
+          <div class="location-weather">
+            <h3 class="weather-txt"></h3>
+          </div>
+          <div class="location-weather-icon">
+            <img src="" alt="" class="weather-icon" />
+          </div>
+        </div>
+      </div>
+      <div class="right-weather-info">
+        <div class="weather-input-container">
+          <input type="text" id="city-value" required />
+          <button class="city-submit-btn">Search</button>
+        </div>
+        <div class="wind-humidity-container">
+          <div class="wind-container">
+            <img src="" alt="" class="weather-icon" />
+            <p class="info-txt">6.1kph</p>
+          </div>
+          <div class="humidity-container">
+            <img src="" alt="" class="weather-icon" />
+            <p class="info-txt">68%</p>
+          </div>
+        </div>
+        <div class="weather-specifics-container">
+          <div class="weather-specifics weather-specifics-1">
+            <p class="specifics-1">Wind degree:</p>
+            <p class="specifics-1-value">120</p>
+          </div>
+          <div class="weather-specifics weather-specifics-2">
+            <p class="specifics-2">Wind direction:</p>
+            <p class="specifics-2-value">ESE</p>
+          </div>
+          <div class="weather-specifics weather-specifics-3">
+            <p class="specifics-3">cloud Coverage:</p>
+            <p class="specifics-3-value">75</p>
+          </div>
+          <div class="weather-specifics weather-specifics-4">
+            <p class="specifics-4">Humidity:</p>
+            <p class="specifics-4-value">68%</p>
+          </div>
+          <div class="weather-specifics weather-specifics-5">
+            <p class="specifics-5">UV:</p>
+            <p class="specifics-5-value">6.0</p>
+          </div>
+          <div class="weather-specifics weather-specifics-6">
+            <p class="specifics-6">Wind Gust:</p>
+            <p class="specifics-6-value">12.9</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

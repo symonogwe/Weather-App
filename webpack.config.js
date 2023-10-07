@@ -22,9 +22,9 @@ const config = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: "Ogwe Weather App",
+      title: "Weather App",
       filename: "index.html",
-      template: "index.html",
+      template: "/src/template.html",
     }),
 
     // Add your plugins here
