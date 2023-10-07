@@ -7,30 +7,38 @@
   </head>
   <body>
     <div id="general-weather-container">
+      <!-- LEFT WEATHER SECTION -->
       <div class="left-weather-info">
         <div class="location-info">
           <div class="location-area">
-            <h1 class="location-region">NAIROBI</h1>
-            <h3 class="location-area">Nairobi Area</h3>
-            <h3 class="location-country">Kenya</h3>
+            <h1 class="location-region-txt">NAIROBI</h1>
+            <h3 class="location-area-txt">Nairobi Area</h3>
+            <h3 class="location-country-txt">Kenya</h3>
           </div>
           <div class="location-time">
-            <p class="location-time">october 7 11:12</p>
+            <p class="location-time-txt">october 7 11:12</p>
           </div>
         </div>
-        <div class="temperature-info">
-          <div class="temp-c">19.0</div>
-          <div class="temp-f">66.2</div>
+        <div class="temp-container">
+          <div class="temperature-info">
+            <div class="temp-c">
+              <img src="" alt="" class="celsius-icon" />
+              <p class="celsius-txt">19.0</p>
+            </div>
+            <div class="temp-f">
+              <img src="" alt="" class="f-icon" />
+              <p class="f-txt">66.2</p>
+            </div>
+          </div>
         </div>
         <div class="location-weather-data">
           <div class="location-weather">
-            <h3 class="weather-txt"></h3>
-          </div>
-          <div class="location-weather-icon">
-            <img src="" alt="" class="weather-icon" />
+            <h3 class="weather-txt">CLOUDY</h3>
+            <img src="" alt="" class="weather-icon-big" />
           </div>
         </div>
       </div>
+      <!-- RIGHT WEATHER SECTION -->
       <div class="right-weather-info">
         <div class="weather-input-container">
           <input type="text" id="city-value" required />

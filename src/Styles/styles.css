@@ -1,16 +1,23 @@
-@import url("https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Gloock&family=Zilla+Slab&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Volkhov&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Secular+One&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Aleo&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Assistant:wght@700&display=swap");
 
 :root {
   --base-color: #1d2d44;
   --sub-base-color: #3e5c76;
   --sub-color: #0d1321;
   --text-color: #f0ebd8;
-  --base-p-fs: calc(1rem + 1vw);
-  --base-header-fs: calc(1.1rem + 1.2vw);
-  --app-h2-fs: calc(0.6rem + 0.6vw);
+  --base-p-fs: calc(0.8rem + 0.7vw);
+  --base-h1-fs: calc(2rem + 2vw);
+  --base-h2-fs: calc(1.4rem + 1.2vw);
+  --base-h3-fs: calc(1.2rem + 1vw);
+  --base-h1-ff: "Secular One", sans-serif;
+  --base-h2-ff: "Assistant", sans-serif;
+  --base-p-ff: "Volkhov", sans-serif;
   --logo-width: max(35px, 30%);
-  --base-header-ff: "Gloock", sans-serif;
   --base-paragraph-ff: "Nanum Myeongjo", sans-serif;
   --base-margin: 0.2em 0.6em;
   --base-padding: 0.4em 0.6em;
@@ -32,7 +39,6 @@ body {
 }
 
 #general-weather-container {
-  /* border: 1px solid red; */
   width: 75%;
   height: 60%;
   display: grid;
@@ -41,10 +47,108 @@ body {
   border-radius: 0.5em;
 }
 
+/* LEFT WEATHER INFO */
+
 .left-weather-info {
-  /* border: 1px solid red; */
-  /* background-color: var(--sub-color); */
+  border: 3px solid var(--text-color);
+  /* position: relative; */
+  border-radius: 0.5em;
 }
+
+.location-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.location-area {
+  line-height: 1;
+  padding: var(--base-padding);
+}
+
+.location-region-txt {
+  font-size: var(--base-h1-fs);
+  font-family: var(--base-h1-ff);
+  color: var(--text-color);
+}
+
+.location-area-txt {
+  font-size: var(--base-h2-fs);
+  font-family: var(--base-h2-ff);
+}
+
+.location-country-txt {
+  font-size: var(--base-h3-fs);
+  font-family: var(--base-h2-ff);
+}
+
+.location-time {
+  padding: var(--base-padding);
+}
+
+.location-time-txt {
+  font-family: var(--base-p-ff);
+  font-size: calc(0.7rem + 0.6vw);
+}
+
+.temp-container {
+  display: grid;
+  justify-items: center;
+}
+
+.temperature-info {
+  margin-top: 7%;
+  width: 60%;
+  display: flex;
+  justify-content: center;
+}
+
+.temperature-info .temp-c,
+.temperature-info .temp-f {
+  border: 1px solid var(--text-color);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  padding: var(--base-padding);
+}
+
+.celsius-icon,
+.f-icon {
+  width: max(20px, 15%);
+  filter: invert(88%) sepia(29%) saturate(142%) hue-rotate(350deg)
+    brightness(106%) contrast(88%);
+}
+
+.celsius-txt,
+.f-txt {
+  font-family: var(--base-p-ff);
+  font-size: var(--base-p-fs);
+}
+
+.location-weather-data {
+  margin-top: 6%;
+  display: grid;
+  justify-items: center;
+}
+
+.location-weather {
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.weather-txt {
+  font-size: var(--base-h1-fs);
+  font-family: var(--base-h2-ff);
+}
+
+.weather-icon-big {
+  width: max(5px, 13%);
+  justify-items: flex-start;
+  filter: invert(88%) sepia(29%) saturate(142%) hue-rotate(350deg)
+    brightness(106%) contrast(88%);
+}
+
+/* RIGHT WEATHER INFO */
 
 .right-weather-info {
 }
