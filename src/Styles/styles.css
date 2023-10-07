@@ -2,10 +2,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Gloock&family=Zilla+Slab&display=swap");
 
 :root {
-  --base-color: #344e41;
-  --sub-base-color: #588157;
-  --sub-color: #a3b18a;
-  --text-color: #dad7cd;
+  --base-color: #1d2d44;
+  --sub-base-color: #3e5c76;
+  --sub-color: #0d1321;
+  --text-color: #f0ebd8;
   --base-p-fs: calc(1rem + 1vw);
   --base-header-fs: calc(1.1rem + 1.2vw);
   --app-h2-fs: calc(0.6rem + 0.6vw);
@@ -15,4 +15,36 @@
   --base-margin: 0.2em 0.6em;
   --base-padding: 0.4em 0.6em;
   --box-shadow: 5px 10px 30px black;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--base-color);
+  height: 100vh;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+#general-weather-container {
+  /* border: 1px solid red; */
+  width: 75%;
+  height: 60%;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  background-color: var(--sub-base-color);
+  border-radius: 0.5em;
+}
+
+.left-weather-info {
+  /* border: 1px solid red; */
+  /* background-color: var(--sub-color); */
+}
+
+.right-weather-info {
 }
