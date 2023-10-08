@@ -39,8 +39,8 @@ body {
 }
 
 #general-weather-container {
-  width: 75%;
-  height: 60%;
+  height: 65%;
+  width: 70%;
   display: grid;
   grid-template-columns: 1.5fr 1fr;
   background-color: var(--sub-base-color);
@@ -51,7 +51,6 @@ body {
 
 .left-weather-info {
   border: 3px solid var(--text-color);
-  /* position: relative; */
   border-radius: 0.5em;
 }
 
@@ -83,6 +82,7 @@ body {
 
 .location-time {
   padding: var(--base-padding);
+  color: var(--text-color);
 }
 
 .location-time-txt {
@@ -91,12 +91,13 @@ body {
 }
 
 .temp-container {
+  height: 10%;
   display: grid;
   justify-items: center;
+  margin-top: 7%;
 }
 
 .temperature-info {
-  margin-top: 7%;
   width: 60%;
   display: flex;
   justify-content: center;
@@ -108,6 +109,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-items: center;
+  align-items: center;
   padding: var(--base-padding);
 }
 
@@ -125,6 +127,7 @@ body {
 }
 
 .location-weather-data {
+  height: 15%;
   margin-top: 6%;
   display: grid;
   justify-items: center;
@@ -134,11 +137,13 @@ body {
   width: 90%;
   display: flex;
   justify-content: space-around;
+  align-items: center;
 }
 
 .weather-txt {
-  font-size: var(--base-h1-fs);
+  font-size: calc(1.6rem + 1.5vw);
   font-family: var(--base-h2-ff);
+  color: var(--text-color);
 }
 
 .weather-icon-big {
@@ -146,6 +151,51 @@ body {
   justify-items: flex-start;
   filter: invert(88%) sepia(29%) saturate(142%) hue-rotate(350deg)
     brightness(106%) contrast(88%);
+}
+
+.location-prediction-container {
+  margin-top: 4%;
+  height: 25%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.prediction-container-1,
+.prediction-container-2,
+.prediction-container-3,
+.prediction-container-4 {
+  border: 1.5px solid var(--text-color);
+  width: 20%;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+.prediction-time-1,
+.prediction-time-2,
+.prediction-time-3,
+.prediction-time-4 {
+  font-size: calc(1.1rem + 0.8vw);
+  font-family: "Aleo";
+  color: var(--text-color);
+}
+
+.prediction-location-1,
+.prediction-location-2,
+.prediction-location-3,
+.prediction-location-4 {
+  font-size: calc(0.8rem + 0.7vw);
+  font-family: "Aleo";
+}
+
+.prediction-weather-1,
+.prediction-weather-2,
+.prediction-weather-3,
+.prediction-weather-4 {
+  font-size: calc(0.6rem + 0.5vw);
+  font-family: var(--base-h1-ff);
+  color: var(--text-color);
 }
 
 /* RIGHT WEATHER INFO */
