@@ -63,17 +63,22 @@
       <!-- RIGHT WEATHER SECTION -->
       <div class="right-weather-info">
         <div class="weather-input-container">
-          <input type="text" id="city-value" required />
+          <input
+            type="text"
+            id="city-value"
+            placeholder="Enter your city..."
+            required
+          />
           <button class="city-submit-btn">Search</button>
         </div>
         <div class="wind-humidity-container">
           <div class="wind-container">
-            <img src="" alt="" class="weather-icon" />
-            <p class="info-txt">6.1kph</p>
+            <img src="" alt="" class="weather-icon wind-icon" />
+            <p class="wind-info-txt">6.1kph</p>
           </div>
           <div class="humidity-container">
-            <img src="" alt="" class="weather-icon" />
-            <p class="info-txt">68%</p>
+            <img src="" alt="" class="weather-icon humidity-icon" />
+            <p class="humidity-info-txt">68%</p>
           </div>
         </div>
         <div class="weather-specifics-container">
@@ -101,6 +106,20 @@
             <p class="specifics-6">Wind Gust:</p>
             <p class="specifics-6-value">12.9</p>
           </div>
+        </div>
+        <div class="sun-details-container">
+          <div class="sunrise-container">
+            <p class="sunrise">Sunrise:</p>
+            <p class="sunrise-value">6:46am</p>
+          </div>
+          <div class="sunset-container">
+            <p class="sunset">Sunset:</p>
+            <p class="sunset-value">7:00pm</p>
+          </div>
+        </div>
+        <div class="moon-phase-container">
+          <p class="moon-phase">Moon Phase:</p>
+          <p class="moon-phase-value">Waning Crescent</p>
         </div>
       </div>
     </div>

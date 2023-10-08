@@ -101,11 +101,13 @@ body {
   width: 60%;
   display: flex;
   justify-content: center;
+  gap: 10px;
 }
 
 .temperature-info .temp-c,
 .temperature-info .temp-f {
   border: 1px solid var(--text-color);
+  border-radius: 0.5em;
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-items: center;
@@ -166,6 +168,7 @@ body {
 .prediction-container-3,
 .prediction-container-4 {
   border: 1.5px solid var(--text-color);
+  border-radius: 0.5em;
   width: 20%;
   display: grid;
   justify-items: center;
@@ -201,4 +204,125 @@ body {
 /* RIGHT WEATHER INFO */
 
 .right-weather-info {
+  /* border: 0.8px solid var(--text-color);
+  border-radius: 0.5em; */
+}
+
+.weather-input-container {
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  height: 7%;
+  padding: var(--base-padding);
+}
+
+#city-value {
+  height: 80%;
+  border-radius: 0.5em;
+  border: none;
+  outline: none;
+  appearance: none;
+  font-size: calc(0.5rem + 0.5vw);
+}
+
+#city-value:focus:invalid {
+  outline: 1px solid red;
+  background-color: pink;
+}
+
+.city-submit-btn {
+  padding: 0.4em 0.8em;
+  border-radius: 0.5em;
+  border: none;
+  background-color: var(--base-color);
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.city-submit-btn:hover {
+  scale: 1.1;
+}
+
+.wind-humidity-container {
+  /* border: 1px solid red; */
+  height: 10%;
+  margin-top: 8%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.wind-container,
+.humidity-container {
+  width: 30%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 5px;
+}
+
+.weather-icon {
+  width: var(--logo-width);
+  filter: invert(88%) sepia(29%) saturate(142%) hue-rotate(350deg)
+    brightness(106%) contrast(88%);
+}
+
+.wind-info-txt,
+.humidity-info-txt {
+  font-family: var(--base-p-ff);
+  font-size: var(--base-p-fs);
+}
+
+.weather-specifics-container {
+  height: 30%;
+  margin-top: 8%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(100px, 1fr));
+  grid-template-rows: repeat(3, 1fr);
+  gap: 10px;
+  padding: var(--base-padding);
+}
+
+.weather-specifics {
+  border: 1px solid var(--text-color);
+  border-radius: 0.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.weather-specifics > p {
+  font-family: var(--base-p-ff);
+  font-size: calc(0.7rem + 0.6vw);
+}
+
+.sun-details-container {
+  /* border: 1px solid red; */
+  padding: var(--base-padding);
+  margin-top: 5%;
+  height: 7%;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.sun-details-container > div {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: calc(0.7rem + 0.6vw);
+  font-family: var(--base-p-ff);
+  color: var(--text-color);
+}
+
+.moon-phase-container {
+  margin-top: 5%;
+  padding: var(--base-padding);
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  font-size: calc(0.7rem + 0.6vw);
+  font-family: var(--base-p-ff);
+  color: var(--text-color);
 }
