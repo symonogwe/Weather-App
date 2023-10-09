@@ -1,3 +1,5 @@
+/* eslint-disable no-plusplus */
+/* eslint-disable no-use-before-define */
 /* eslint-disable prefer-destructuring */
 /* eslint-disable consistent-return */
 /* eslint-disable array-callback-return */
@@ -82,18 +84,9 @@ function setPredictionsData(dataObject) {
     element.textContent = dataObject.location.name;
   });
 
-  if (newTimeArray.length === 0) {
-    newTimeArray[0] = dataObject.forecast.forecastday[1].hour[0];
-    newTimeArray[1] = dataObject.forecast.forecastday[1].hour[1];
-    newTimeArray[2] = dataObject.forecast.forecastday[1].hour[2];
-    newTimeArray[3] = dataObject.forecast.forecastday[1].hour[3];
-  } else if (newTimeArray[1] === undefined) {
-    newTimeArray[1] = dataObject.forecast.forecastday[1].hour[0];
-  } else if (newTimeArray[2] === undefined) {
-    newTimeArray[2] = dataObject.forecast.forecastday[1].hour[1];
-  } else if (newTimeArray[3] === undefined) {
-    newTimeArray[3] = dataObject.forecast.forecastday[1].hour[2];
-  }
+  console.log(newTimeArray);
+
+  checkEmptyIndex(newTimeArray, dataObject);
 
   // predictions div 1
   const predictionTime1 = document.querySelector(".prediction-time-1");
@@ -184,6 +177,28 @@ function displayError(message) {
 function clearError() {
   const errorTxt = document.querySelector(".error-txt");
   errorTxt.textContent = "";
+}
+
+// UTILITY FUNCTIONS
+function checkEmptyIndex(arr, obj) {
+  if (arr.length === 0) {
+    arr[0] = obj.forecast.forecastday[1].hour[0];
+    arr[1] = obj.forecast.forecastday[1].hour[1];
+    arr[2] = obj.forecast.forecastday[1].hour[2];
+    arr[3] = obj.forecast.forecastday[1].hour[3];
+  } else {
+    while (arr.length < 4) {
+      if (arr[1] === undefined && arr[0] !== undefined) {
+        arr[1] = obj.forecast.forecastday[1].hour[0];
+      }
+      if (arr[2] === undefined && arr[1] !== undefined) {
+        arr[2] = obj.forecast.forecastday[1].hour[0];
+      }
+      if (arr[3] === undefined) {
+        arr[3] = obj.forecast.forecastday[1].hour[1];
+      }
+    }
+  }
 }
 
 export {
