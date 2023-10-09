@@ -22,8 +22,12 @@ function getCityValue() {
 async function searchCityWeather() {
   const city = getCityValue();
   const response = await fetch(
-    `http://api.weatherapi.com/v1/forecast.json?key=d3618822b8134356aff61709230510&q=${city}&days=1&aqi=no&alerts=no`
+    `http://api.weatherapi.com/v1/forecast.json?key=d3618822b8134356aff61709230510&q=${city}&days=2&aqi=no&alerts=no`
   );
+
+  if (response.status !== 200) {
+    throw new Error("invalid location");
+  }
 
   const data = await response.json();
   return data;
@@ -43,7 +47,7 @@ function useWeatherData() {
       setSunMoonData(data);
       console.log(data);
     })
-    .catch((err) => displayError());
+    .catch((err) => displayError(err));
 }
 
 const searchCityBtn = document.querySelector(".city-submit-btn");

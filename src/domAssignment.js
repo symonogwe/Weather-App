@@ -1,3 +1,4 @@
+/* eslint-disable prefer-destructuring */
 /* eslint-disable consistent-return */
 /* eslint-disable array-callback-return */
 /* eslint-disable no-param-reassign */
@@ -58,7 +59,7 @@ function setCurrentWeatherData(dataObject) {
   const weatherIcon = document.querySelector(".weather-icon-big");
   if (condition === "partly cloudy") weatherIcon.src = weatherIconArray[1];
   if (condition.includes("sun")) weatherIcon.src = weatherIconArray[3];
-  if (condition === "clear") weatherIcon.src = weatherIconArray[3];
+  if (condition === "clear") weatherIcon.src = weatherIconArray[0];
   if (condition.includes("rain")) weatherIcon.src = weatherIconArray[2];
   if (condition.includes("cloud")) weatherIcon.src = weatherIconArray[0];
   if (condition === "overcast") weatherIcon.src = weatherIconArray[0];
@@ -80,6 +81,19 @@ function setPredictionsData(dataObject) {
   predictionLocation1.forEach((element) => {
     element.textContent = dataObject.location.name;
   });
+
+  if (newTimeArray.length === 0) {
+    newTimeArray[0] = dataObject.forecast.forecastday[1].hour[0];
+    newTimeArray[1] = dataObject.forecast.forecastday[1].hour[1];
+    newTimeArray[2] = dataObject.forecast.forecastday[1].hour[2];
+    newTimeArray[3] = dataObject.forecast.forecastday[1].hour[3];
+  } else if (newTimeArray[1] === undefined) {
+    newTimeArray[1] = dataObject.forecast.forecastday[1].hour[0];
+  } else if (newTimeArray[2] === undefined) {
+    newTimeArray[2] = dataObject.forecast.forecastday[1].hour[1];
+  } else if (newTimeArray[3] === undefined) {
+    newTimeArray[3] = dataObject.forecast.forecastday[1].hour[2];
+  }
 
   // predictions div 1
   const predictionTime1 = document.querySelector(".prediction-time-1");
@@ -162,9 +176,9 @@ function setSunMoonData(dataObject) {
 }
 
 // INVALID CITY VALUE
-function displayError() {
+function displayError(message) {
   const errorTxt = document.querySelector(".error-txt");
-  errorTxt.textContent = "Invalid Location";
+  errorTxt.textContent = message;
 }
 
 function clearError() {
