@@ -190,12 +190,15 @@ function checkEmptyIndex(arr, obj) {
     while (arr.length < 4) {
       if (arr[1] === undefined && arr[0] !== undefined) {
         arr[1] = obj.forecast.forecastday[1].hour[0];
+        arr[2] = obj.forecast.forecastday[1].hour[1];
+        arr[3] = obj.forecast.forecastday[1].hour[2];
       }
       if (arr[2] === undefined && arr[1] !== undefined) {
         arr[2] = obj.forecast.forecastday[1].hour[0];
+        arr[3] = obj.forecast.forecastday[1].hour[1];
       }
       if (arr[3] === undefined) {
-        arr[3] = obj.forecast.forecastday[1].hour[1];
+        arr[3] = obj.forecast.forecastday[1].hour[0];
       }
     }
   }
