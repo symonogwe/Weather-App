@@ -161,6 +161,17 @@ function setSunMoonData(dataObject) {
     dataObject.forecast.forecastday[0].astro.moon_phase;
 }
 
+// INVALID CITY VALUE
+function displayError() {
+  const errorTxt = document.querySelector(".error-txt");
+  errorTxt.textContent = "Invalid Location";
+}
+
+function clearError() {
+  const errorTxt = document.querySelector(".error-txt");
+  errorTxt.textContent = "";
+}
+
 export {
   setLocationData,
   setLLocationTime,
@@ -170,4 +181,6 @@ export {
   setWindHumidity,
   setWeatherSpecifics,
   setSunMoonData,
+  displayError,
+  clearError,
 };

@@ -7,6 +7,8 @@ import {
   setWindHumidity,
   setWeatherSpecifics,
   setSunMoonData,
+  displayError,
+  clearError,
 } from "./domAssignment";
 
 // CITY INPUT VALUE
@@ -22,22 +24,26 @@ async function searchCityWeather() {
   const response = await fetch(
     `http://api.weatherapi.com/v1/forecast.json?key=d3618822b8134356aff61709230510&q=${city}&days=1&aqi=no&alerts=no`
   );
+
   const data = await response.json();
   return data;
 }
 
 function useWeatherData() {
-  searchCityWeather().then((data) => {
-    setLocationData(data);
-    setLLocationTime(data);
-    setTemperatureData(data);
-    setCurrentWeatherData(data);
-    setPredictionsData(data);
-    setWindHumidity(data);
-    setWeatherSpecifics(data);
-    setSunMoonData(data);
-    console.log(data);
-  });
+  clearError();
+  searchCityWeather()
+    .then((data) => {
+      setLocationData(data);
+      setLLocationTime(data);
+      setTemperatureData(data);
+      setCurrentWeatherData(data);
+      setPredictionsData(data);
+      setWindHumidity(data);
+      setWeatherSpecifics(data);
+      setSunMoonData(data);
+      console.log(data);
+    })
+    .catch((err) => displayError());
 }
 
 const searchCityBtn = document.querySelector(".city-submit-btn");

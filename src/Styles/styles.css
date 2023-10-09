@@ -239,6 +239,17 @@ body {
   scale: 1.1;
 }
 
+.error-messsage {
+  margin-top: 3%;
+  display: grid;
+  justify-items: center;
+  color: red;
+}
+
+.error-txt {
+  font-size: var(--base-p-fs);
+}
+
 .wind-humidity-container {
   height: 10%;
   margin-top: 8%;
