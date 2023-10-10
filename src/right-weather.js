@@ -25,7 +25,7 @@ async function searchCityWeather() {
   showLoader();
   const city = getCityValue();
   const response = await fetch(
-    `http://api.weatherapi.com/v1/forecast.json?key=d3618822b8134356aff61709230510&q=${city}&days=2&aqi=no&alerts=no`
+    `https://api.weatherapi.com/v1/forecast.json?key=d3618822b8134356aff61709230510&q=${city}&days=2&aqi=no&alerts=no`
   );
 
   if (response.status !== 200) {
