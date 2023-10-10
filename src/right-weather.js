@@ -51,7 +51,10 @@ function useWeatherData() {
       hideLoader();
       console.log(data);
     })
-    .catch((err) => displayError(err));
+    .catch((err) => {
+      displayError(err);
+      hideLoader();
+    });
 }
 
 const searchCityBtn = document.querySelector(".city-submit-btn");
