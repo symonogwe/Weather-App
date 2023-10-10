@@ -153,6 +153,7 @@ body {
   grid-template-columns: 1fr 1fr;
   justify-items: center;
   align-items: center;
+  gap: 5px;
   padding: var(--base-padding);
 }
 
@@ -417,4 +418,90 @@ body {
 .github-img:hover,
 .twitter-img:hover {
   scale: 1.1;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 800px) {
+  #general-weather-container {
+    height: 65%;
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    background-color: var(--sub-base-color);
+    border-radius: 0.5em;
+  }
+}
+
+@media (max-width: 600px) {
+  #general-weather-container {
+    height: 65%;
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    background-color: var(--sub-base-color);
+    border-radius: 0.5em;
+  }
+}
+
+@media (max-width: 500px) {
+  #general-weather-container {
+    height: 75%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    background-color: var(--sub-base-color);
+    border-radius: 0.5em;
+  }
+  .location-prediction-container {
+    margin-top: 3%;
+    margin-bottom: 2%;
+    height: 35%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+  }
+
+  .prediction-container-1,
+  .prediction-container-2,
+  .prediction-container-3,
+  .prediction-container-4 {
+    width: 100%;
+  }
+
+  .right-weather-info {
+    width: 100%;
+  }
+
+  .celsius-icon,
+  .f-icon {
+    width: 20px;
+    filter: invert(88%) sepia(29%) saturate(142%) hue-rotate(350deg)
+      brightness(106%) contrast(88%);
+  }
+
+  .footer {
+    bottom: 20px;
+    width: 100%;
+  }
+
+  .social-icons-container {
+    width: 70%;
+  }
+
+  .loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--base-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    transition:
+      opacity 0.75s,
+      visibility 0.75s;
+  }
 }

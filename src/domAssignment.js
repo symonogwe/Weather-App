@@ -24,7 +24,7 @@ const humidityIcon = document.querySelector(".humidity-icon");
 humidityIcon.src = humiditySvg;
 
 // WEATHER ICONS ARRAY
-const weatherIconArray = [clouds, partlyCloudy, rainy, sunny, snow];
+const weatherIconArray = [clouds, partlyCloudy, rainy, sunny, snow, windSvg];
 
 // LOCATION DOM FUNCTIONALITY
 function setLocationData(dataObject) {
@@ -67,6 +67,7 @@ function setCurrentWeatherData(dataObject) {
   if (condition.includes("cloud")) weatherIcon.src = weatherIconArray[0];
   if (condition === "overcast") weatherIcon.src = weatherIconArray[0];
   if (condition.includes("snow")) weatherIcon.src = weatherIconArray[4];
+  if (condition === "mist") weatherIcon.src = weatherIconArray[5];
 }
 
 // PREDICTIONS DOM FUNCTIONALITY
