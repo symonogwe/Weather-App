@@ -11,6 +11,8 @@ import {
   clearError,
 } from "./domAssignment";
 
+import { showLoader, hideLoader } from "./loader";
+
 // CITY INPUT VALUE
 function getCityValue() {
   const cityInput = document.getElementById("city-value");
@@ -20,6 +22,7 @@ function getCityValue() {
 
 // SEARCH CITY BUTTON FUNCTION IMPLEMENTATION
 async function searchCityWeather() {
+  showLoader();
   const city = getCityValue();
   const response = await fetch(
     `http://api.weatherapi.com/v1/forecast.json?key=d3618822b8134356aff61709230510&q=${city}&days=2&aqi=no&alerts=no`
@@ -45,6 +48,7 @@ function useWeatherData() {
       setWindHumidity(data);
       setWeatherSpecifics(data);
       setSunMoonData(data);
+      hideLoader();
       console.log(data);
     })
     .catch((err) => displayError(err));
