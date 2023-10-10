@@ -10,6 +10,7 @@ import clouds from "./Assets/clouds.svg";
 import partlyCloudy from "./Assets/partly-cloudy.svg";
 import rainy from "./Assets/rainy.svg";
 import sunny from "./Assets/sunny.svg";
+import snow from "./Assets/snow.svg";
 
 import windSvg from "./Assets/wind.svg";
 import humiditySvg from "./Assets/humidity.svg";
@@ -23,7 +24,7 @@ const humidityIcon = document.querySelector(".humidity-icon");
 humidityIcon.src = humiditySvg;
 
 // WEATHER ICONS ARRAY
-const weatherIconArray = [clouds, partlyCloudy, rainy, sunny];
+const weatherIconArray = [clouds, partlyCloudy, rainy, sunny, snow];
 
 // LOCATION DOM FUNCTIONALITY
 function setLocationData(dataObject) {
@@ -65,6 +66,7 @@ function setCurrentWeatherData(dataObject) {
   if (condition.includes("rain")) weatherIcon.src = weatherIconArray[2];
   if (condition.includes("cloud")) weatherIcon.src = weatherIconArray[0];
   if (condition === "overcast") weatherIcon.src = weatherIconArray[0];
+  if (condition.includes("snow")) weatherIcon.src = weatherIconArray[4];
 }
 
 // PREDICTIONS DOM FUNCTIONALITY
