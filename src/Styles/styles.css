@@ -379,3 +379,42 @@ body {
   font-family: var(--base-p-ff);
   color: var(--text-color);
 }
+
+/* FOOTER */
+.footer {
+  position: fixed;
+  bottom: 8px;
+  left: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.social-icons-container {
+  width: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-name {
+  color: var(--text-color);
+  font-size: calc(0.8rem + 0.7vw);
+}
+
+.footer-icons-container {
+  width: 50%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.github-img,
+.twitter-img {
+  width: max(35px, 15%);
+  cursor: pointer;
+}
+
+.github-img:hover,
+.twitter-img:hover {
+  scale: 1.1;
+}
